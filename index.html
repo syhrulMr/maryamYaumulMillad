@@ -476,6 +476,74 @@
           transform: rotateY(0deg);
         }
       }
+
+      /* ===== BIRTHDAY CELEBRATION EFFECT ===== */
+      .birthday-effects {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+      }
+
+      .floating-love {
+        position: absolute;
+        bottom: -50px;
+        font-size: 20px;
+        opacity: 0.8;
+        animation: floatUp 6s linear infinite;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) scale(0.8);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-110vh) scale(1.2);
+          opacity: 0;
+        }
+      }
+
+      /* ===== BIRTHDAY CELEBRATION EFFECT ===== */
+      .birthday-effects {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+      }
+
+      .floating-love {
+        position: absolute;
+        bottom: -50px;
+        font-size: 20px;
+        opacity: 0.8;
+        animation: floatUp 6s linear infinite;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) scale(0.8);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-110vh) scale(1.2);
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -560,183 +628,190 @@
 
     <!-- Audio Element -->
     <audio id="bgMusic" loop>
-      <source
-        src="James Arthur - Say You Won't Let Go.mp3"
-        type="audio/mpeg"
-      />
+      <source src="James Arthur - Say You Won't Let Go.mp3" type="audio/mpeg" />
       Browser Anda tidak mendukung elemen audio.
     </audio>
 
     <script>
-    // ============================================
-    // EDIT DI SINI - TANGGAL ULANG TAHUN
-    // ============================================
-    const BIRTHDAY_DATE = new Date();
-    BIRTHDAY_DATE.setFullYear(2026, 0, 2); // Tahun, Bulan (0-11), Tanggal
-    BIRTHDAY_DATE.setHours(0, 0, 0, 0); // Jam, Menit, Detik, Milidetik
-    // ============================================
+      // ============================================
+      // EDIT DI SINI - TANGGAL ULANG TAHUN
+      // ============================================
+      const BIRTHDAY_DATE = new Date();
+      BIRTHDAY_DATE.setFullYear(2026, 0, 2); // Tahun, Bulan (0-11), Tanggal
+      BIRTHDAY_DATE.setHours(0, 0, 0, 0); // Jam, Menit, Detik, Milidetik
+      // ============================================
 
-    // Photo Data dengan foto kamu - PATH SUDAH BENAR
-    const photosData = [
+      // Photo Data dengan foto kamu - PATH SUDAH BENAR
+      const photosData = [
         {
-            text: "Kenangan pertama kita bersama, saat dunia terasa begitu sempurna",
-            icon: "fas fa-heart",
-            photoUrl: "img/DSC_0035.JPG",
-            color: "#FFB6C1",
+          text: "aku suka ciduk kamu dari belakang walau, aku hanya pake cara PAPARAZI",
+          icon: "fas fa-heart",
+          photoUrl: "img/DSC_0035.JPG",
+          color: "#FFB6C1",
         },
         {
-            text: "Kenangan pertama kita bersama, saat dunia terasa begitu sempurna",
-            icon: "fas fa-heart",
-            photoUrl: "img/Untitled.p1ng.png",
-            color: "#FFB6C1",
+          text: "Kenangan pertama kita bersama, saat dunia terasa begitu sempurna",
+          icon: "fas fa-heart",
+          photoUrl: "img/Untitled.p1ng.png",
+          color: "#FFB6C1",
         },
         {
-            text: "Kenangan pertama kita bersama, saat dunia terasa begitu sempurna",
-            icon: "fas fa-heart",
-            photoUrl: "img/Untitled.png1.png",
-            color: "#FFB6C1",
+          text: "SENANG RASA nya'",
+          icon: "fas fa-heart",
+          photoUrl: "img/Untitled.png1.png",
+          color: "#FFB6C1",
         },
         {
-            text: "Setiap tawa bersamamu adalah melodi terindah dalam hidupku",
-            icon: "fas fa-smile",
-            photoUrl: "img/DSC_0732.JPG",
-            color: "#C8E6C9",
+          text: "na cidukKI mi, FAJAR dari belakang, kwkwkwkwk",
+          icon: "fas fa-smile",
+          photoUrl: "img/DSC_0732.JPG",
+          color: "#C8E6C9",
         },
         {
-            text: "Kamu membuat setiap hari terasa seperti petualangan baru",
-            icon: "fas fa-star",
-            photoUrl: "img/DSC_0746.JPG",
-            color: "#B5EAD7",
+          text: "foto dimana awal kita kenalan",
+          icon: "fas fa-star",
+          photoUrl: "img/DSC_0746.JPG",
+          color: "#B5EAD7",
         },
         {
-            text: "Di mataku, kamu akan selalu menjadi yang terindah",
-            icon: "fas fa-gem",
-            photoUrl: "img/Gambar WhatsApp 2025-01-08 pukul 19.30.54_1c8f7a8a.jpg",
-            color: "#FFDAC1",
+          text: "sama ini juga, by FAJAR",
+          icon: "fas fa-gem",
+          photoUrl:
+            "img/Gambar WhatsApp 2025-01-08 pukul 19.30.54_1c8f7a8a.jpg",
+          color: "#FFDAC1",
         },
         {
-            text: "Bersamamu, aku menemukan rumah sejati",
-            icon: "fas fa-home",
-            photoUrl: "img/IMG-20250509-WA0056.jpg",
-            color: "#D8E2DC",
+          text: "Bersamamu, aku menemukan rumah sejati",
+          icon: "fas fa-home",
+          photoUrl: "img/IMG-20250509-WA0056.jpg",
+          color: "#D8E2DC",
         },
         {
-            text: "Cintamu adalah cahaya yang menerangi hari-hariku",
-            icon: "fas fa-sun",
-            photoUrl: "img/IMG-20250509-WA0059.jpg",
-            color: "#E2F0CB",
+          text: "Cintamu adalah cahaya yang menerangi hari-hariku",
+          icon: "fas fa-sun",
+          photoUrl: "img/IMG-20250509-WA0059.jpg",
+          color: "#E2F0CB",
         },
         {
-            text: "Setiap detik bersamamu adalah anugerah terindah",
-            icon: "fas fa-heartbeat",
-            photoUrl: "img/IMG-20250509-WA0070.jpg",
-            color: "#D0D1FF",
+          text: "Setiap detik bersamamu adalah anugerah terindah",
+          icon: "fas fa-heartbeat",
+          photoUrl: "img/IMG-20250509-WA0070.jpg",
+          color: "#D0D1FF",
         },
-    ];
+      ];
 
-    // Messages Data SEBELUM ulang tahun
-    const messages = [
+      // Messages Data SEBELUM ulang tahun
+      const messages = [
         "Sayangku, di ulang tahunmu ini, aku berdoa agar setiap harimu dipenuhi kebahagiaan, kesehatan, dan keberkahan. Kamu adalah hadiah terindah dari Tuhan untukku.",
         "Tidak ada kata yang cukup untuk menggambarkan betapa bersyukurnya aku memilikimu. Kamu membuat hidupku lebih berarti dan penuh warna.",
         "Semoga tahun ini membawa semua impian dan harapanmu menjadi kenyataan. Aku akan selalu ada di sisimu, mendukung setiap langkahmu.",
         "Setiap kenangan bersamamu adalah harta karun yang aku simpan di hati. Terima kasih telah menjadi bagian terindah dari hidupku.",
         "Di hari spesialmu ini, ingatlah bahwa kamu dicintai lebih dari yang bisa kamu bayangkan. Selamat ulang tahun, cintaku!",
         "Mungkin aku tidak bisa memberimu dunia, tapi aku berjanji akan memberimu seluruh cintaku setiap hari dalam hidupku.",
-    ];
+      ];
 
-    // Messages Data SETELAH ulang tahun
-    const birthdayMessages = [
+      // Messages Data SETELAH ulang tahun
+      const birthdayMessages = [
         "🎉🎂🎊 SELAMAT ULANG TAHUN SAYANGKU! 🎊🎂🎉",
         "Hari ini adalah hari spesialmu, hari di mana dunia menjadi lebih indah karena kehadiranmu.",
         "Semoga tahun ini membawa lebih banyak kebahagiaan, kesuksesan, dan cinta dalam hidupmu.",
         "Aku bersyukur bisa merayakan hari spesial ini bersamamu, bahkan dari kejauhan.",
         "Doaku selalu menyertaimu: sehat selalu, sukses dalam segala hal, dan selalu bahagia.",
         "Terima kasih telah menjadi cahaya dalam hidupku. Aku mencintaimu lebih dari kata-kata bisa ungkapkan.",
-        "Mari kita buat lebih banyak kenangan indah di tahun yang baru ini! 🥳"
-    ];
+        "Mari kita buat lebih banyak kenangan indah di tahun yang baru ini! 🥳",
+      ];
 
-    // State Variables
-    let currentMessageIndex = 0;
-    let isMusicPlaying = false;
-    let userInteracted = false;
-    let flippedPhotos = new Set();
-    let isBirthdayTime = false; // VARIABLE BARU: status apakah sudah waktunya ulang tahun
-    
-    // VARIABEL UNTUK TYPING ANIMATION
-    let typingTimeoutId = null;
-    let currentTypingIndex = 0;
-    let isTyping = false;
+      // State Variables
+      let currentMessageIndex = 0;
+      let isMusicPlaying = false;
+      let userInteracted = false;
+      let flippedPhotos = new Set();
+      let isBirthdayTime = false; // VARIABLE BARU: status apakah sudah waktunya ulang tahun
 
-    // DOM Elements
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
-    const birthdayMessage = document.getElementById("birthdayMessage");
-    const photosSection = document.getElementById("photosSection");
-    const typingText = document.getElementById("typingText");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const playBtn = document.getElementById("playBtn");
-    const pauseBtn = document.getElementById("pauseBtn");
-    const bgMusic = document.getElementById("bgMusic");
-    const bgHearts = document.getElementById("bgHearts");
-    const countdownTitle = document.querySelector('.countdown-title');
-    const countdownContainer = document.querySelector('.countdown-container');
-    const messageControls = document.querySelector('.message-controls');
-    const messagesSection = document.querySelector('.messages-section');
+      // VARIABEL UNTUK TYPING ANIMATION
+      let typingTimeoutId = null;
+      let currentTypingIndex = 0;
+      let isTyping = false;
 
-    // Initialize Background Hearts
-    function initBackgroundHearts() {
+      // DOM Elements
+      const daysElement = document.getElementById("days");
+      const hoursElement = document.getElementById("hours");
+      const minutesElement = document.getElementById("minutes");
+      const secondsElement = document.getElementById("seconds");
+      const birthdayMessage = document.getElementById("birthdayMessage");
+      const photosSection = document.getElementById("photosSection");
+      const typingText = document.getElementById("typingText");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const playBtn = document.getElementById("playBtn");
+      const pauseBtn = document.getElementById("pauseBtn");
+      const bgMusic = document.getElementById("bgMusic");
+      const bgHearts = document.getElementById("bgHearts");
+      const countdownTitle = document.querySelector(".countdown-title");
+      const countdownContainer = document.querySelector(".countdown-container");
+      const messageControls = document.querySelector(".message-controls");
+      const messagesSection = document.querySelector(".messages-section");
+
+      // Initialize Background Hearts
+      function initBackgroundHearts() {
         for (let i = 0; i < 20; i++) {
-            const heart = document.createElement("div");
-            heart.className = "heart";
-            heart.innerHTML = "❤️";
-            heart.style.left = `${Math.random() * 100}%`;
-            heart.style.fontSize = `${Math.random() * 20 + 10}px`;
-            heart.style.animationDuration = `${Math.random() * 20 + 10}s`;
-            heart.style.animationDelay = `${Math.random() * 5}s`;
-            bgHearts.appendChild(heart);
+          const heart = document.createElement("div");
+          heart.className = "heart";
+          heart.innerHTML = "❤️";
+          heart.style.left = `${Math.random() * 100}%`;
+          heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+          heart.style.animationDuration = `${Math.random() * 20 + 10}s`;
+          heart.style.animationDelay = `${Math.random() * 5}s`;
+          bgHearts.appendChild(heart);
         }
-    }
+      }
 
-    // Countdown Function dengan transisi otomatis ke birthday mode
-    function updateCountdown() {
+      // Countdown Function dengan transisi otomatis ke birthday mode
+      function updateCountdown() {
         const now = new Date();
         const timeDifference = BIRTHDAY_DATE.getTime() - now.getTime();
-        
+
         // Cek jika sudah waktunya ulang tahun dan belum diaktifkan
         if (timeDifference <= 0 && !isBirthdayTime) {
-            isBirthdayTime = true;
-            startBirthdayCelebration();
-            return;
+          isBirthdayTime = true;
+          startBirthdayCelebration();
+          // 9. LOVE & YEROMPE EFFECT (RINGAN)
+          setTimeout(() => {
+            startFloatingLoveEffect();
+          }, 500);
+
+          return;
         }
-        
+
         // Jika sudah birthday time, jangan update countdown lagi
         if (isBirthdayTime) return;
-        
+
         // Update countdown normal
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const hours = Math.floor(
+          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+        );
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-        
+
         daysElement.textContent = days.toString().padStart(2, "0");
         hoursElement.textContent = hours.toString().padStart(2, "0");
         minutesElement.textContent = minutes.toString().padStart(2, "0");
         secondsElement.textContent = seconds.toString().padStart(2, "0");
-    }
+      }
 
-    // Fungsi untuk memulai perayaan ulang tahun (SEMUA MUNCUL BERSAMAAN)
-    function startBirthdayCelebration() {
+      // Fungsi untuk memulai perayaan ulang tahun (SEMUA MUNCUL BERSAMAAN)
+      function startBirthdayCelebration() {
         console.log("🎉 ULANG TAHUN DIMULAI! 🎉");
-        
+
         // 1. HENTIKAN SEMUA ANIMASI FOTO JATUH
-        const fallingPhotos = document.querySelectorAll('.falling-photo');
-        fallingPhotos.forEach(photo => {
-            photo.style.animation = 'none';
+        const fallingPhotos = document.querySelectorAll(".falling-photo");
+        fallingPhotos.forEach((photo) => {
+          photo.style.animation = "none";
         });
-        
+
         // 2. UPDATE COUNTDOWN TITLE DAN TAMPILAN
         countdownTitle.innerHTML = `
             <span style="color: var(--accent); font-size: 2.2rem;">🎂 Waktunya Merayakan! 🎉</span>
@@ -744,15 +819,15 @@
                 Happy Birthday, ST. Maryam! 💖
             </div>
         `;
-        
+
         // 3. SHOW BIRTHDAY MESSAGE dengan animasi
-        birthdayMessage.style.display = 'block';
-        birthdayMessage.style.opacity = '0';
-        birthdayMessage.style.transform = 'translateY(30px)';
-        birthdayMessage.style.transition = 'all 1s ease';
-        
+        birthdayMessage.style.display = "block";
+        birthdayMessage.style.opacity = "0";
+        birthdayMessage.style.transform = "translateY(30px)";
+        birthdayMessage.style.transition = "all 1s ease";
+
         setTimeout(() => {
-            birthdayMessage.innerHTML = `
+          birthdayMessage.innerHTML = `
                 <div style="font-size: 3rem; margin-bottom: 1rem;">🎉🎂🎊</div>
                 <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent);">
                     SELAMAT ULANG TAHUN!
@@ -764,40 +839,40 @@
                     Hari ini adalah harimu yang spesial!
                 </div>
             `;
-            
-            birthdayMessage.style.opacity = '1';
-            birthdayMessage.style.transform = 'translateY(0)';
+
+          birthdayMessage.style.opacity = "1";
+          birthdayMessage.style.transform = "translateY(0)";
         }, 300);
-        
+
         // 4. HIDE COUNTDOWN NUMBERS secara perlahan
-        countdownContainer.style.opacity = '0.5';
-        countdownContainer.style.transform = 'scale(0.95)';
-        countdownContainer.style.transition = 'all 0.8s ease';
-        
+        countdownContainer.style.opacity = "0.5";
+        countdownContainer.style.transform = "scale(0.95)";
+        countdownContainer.style.transition = "all 0.8s ease";
+
         // 5. SHOW ALL PHOTOS BERSAMAAN dengan animasi spektakuler
         setTimeout(() => {
-            showAllPhotosAtOnce();
+          showAllPhotosAtOnce();
         }, 800);
-        
+
         // 6. UPDATE MESSAGES SECTION untuk ulang tahun
         setTimeout(() => {
-            updateMessagesForBirthday();
+          updateMessagesForBirthday();
         }, 1200);
-        
+
         // 7. TAMBAH EFEK KONFETI
         setTimeout(() => {
-            createBirthdayConfetti();
+          createBirthdayConfetti();
         }, 1500);
-        
+
         // 8. PLAY BIRTHDAY MUSIC (optional)
         // bgMusic.src = "https://assets.codepen.io/242518/happy-birthday-song.mp3";
         // bgMusic.play();
-    }
+      }
 
-    // Fungsi untuk menampilkan semua foto sekaligus dalam grid
-    function showAllPhotosAtOnce() {
+      // Fungsi untuk menampilkan semua foto sekaligus dalam grid
+      function showAllPhotosAtOnce() {
         // Clear photos section
-        photosSection.innerHTML = '';
+        photosSection.innerHTML = "";
         photosSection.style.cssText = `
             min-height: auto;
             position: relative;
@@ -808,9 +883,9 @@
             transform: translateY(50px);
             transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
         `;
-        
+
         // Buat container grid untuk semua foto
-        const photosGrid = document.createElement('div');
+        const photosGrid = document.createElement("div");
         photosGrid.style.cssText = `
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -819,23 +894,27 @@
             max-width: 1200px;
             margin: 0 auto;
         `;
-        
+
         // Buat card untuk setiap foto
         photosData.forEach((photo, index) => {
-            const photoCard = document.createElement('div');
-            photoCard.className = 'birthday-photo-card';
-            photoCard.style.cssText = `
+          const photoCard = document.createElement("div");
+          photoCard.className = "birthday-photo-card";
+          photoCard.style.cssText = `
                 background: white;
                 border-radius: 15px;
                 overflow: hidden;
                 box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-                transform: translateY(30px) rotate(${Math.random() * 10 - 5}deg);
+                transform: translateY(30px) rotate(${
+                  Math.random() * 10 - 5
+                }deg);
                 opacity: 0;
-                transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.1}s;
+                transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${
+                  index * 0.1
+                }s;
                 cursor: pointer;
             `;
-            
-            photoCard.innerHTML = `
+
+          photoCard.innerHTML = `
                 <div style="
                     width: 100%;
                     height: 200px;
@@ -851,7 +930,11 @@
                             object-fit: cover;
                             transition: transform 0.5s ease;
                          "
-                         onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\"width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, ${photo.color}40, #ffffff);color:#666;font-family:sans-serif;\"><i class=\"fas fa-heart\" style=\"font-size:3rem;color:${photo.color};\"></i></div>';"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\"width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, ${
+                           photo.color
+                         }40, #ffffff);color:#666;font-family:sans-serif;\"><i class=\"fas fa-heart\" style=\"font-size:3rem;color:${
+            photo.color
+          };\"></i></div>';"
                     >
                     <div style="
                         position: absolute;
@@ -870,14 +953,18 @@
                         color: white;
                     ">
                         <div style="display: flex; align-items: center; gap: 10px; font-weight: 500;">
-                            <i class="${photo.icon}" style="color: ${photo.color};"></i>
+                            <i class="${photo.icon}" style="color: ${
+            photo.color
+          };"></i>
                             <span>Kenangan ${index + 1}</span>
                         </div>
                     </div>
                 </div>
                 <div style="
                     padding: 1.5rem;
-                    background: linear-gradient(135deg, ${photo.color}10, white);
+                    background: linear-gradient(135deg, ${
+                      photo.color
+                    }10, white);
                 ">
                     <p style="
                         font-size: 1rem;
@@ -888,46 +975,48 @@
                     ">${photo.text}</p>
                 </div>
             `;
-            
-            // Hover effect
-            photoCard.addEventListener('mouseenter', () => {
-                photoCard.style.transform = 'translateY(-10px) scale(1.05)';
-                photoCard.style.boxShadow = '0 25px 50px rgba(0,0,0,0.2)';
-                const img = photoCard.querySelector('img');
-                if (img) img.style.transform = 'scale(1.1)';
-            });
-            
-            photoCard.addEventListener('mouseleave', () => {
-                photoCard.style.transform = 'translateY(0) scale(1)';
-                photoCard.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
-                const img = photoCard.querySelector('img');
-                if (img) img.style.transform = 'scale(1)';
-            });
-            
-            photosGrid.appendChild(photoCard);
+
+          // Hover effect
+          photoCard.addEventListener("mouseenter", () => {
+            photoCard.style.transform = "translateY(-10px) scale(1.05)";
+            photoCard.style.boxShadow = "0 25px 50px rgba(0,0,0,0.2)";
+            const img = photoCard.querySelector("img");
+            if (img) img.style.transform = "scale(1.1)";
+          });
+
+          photoCard.addEventListener("mouseleave", () => {
+            photoCard.style.transform = "translateY(0) scale(1)";
+            photoCard.style.boxShadow = "0 15px 35px rgba(0,0,0,0.1)";
+            const img = photoCard.querySelector("img");
+            if (img) img.style.transform = "scale(1)";
+          });
+
+          photosGrid.appendChild(photoCard);
         });
-        
+
         photosSection.appendChild(photosGrid);
-        
+
         // Trigger animation setelah DOM selesai
         setTimeout(() => {
-            photosSection.style.opacity = '1';
-            photosSection.style.transform = 'translateY(0)';
-            
-            // Animate each photo card
-            const photoCards = photosGrid.querySelectorAll('.birthday-photo-card');
-            photoCards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0) rotate(0deg)';
-            });
-        }, 100);
-    }
+          photosSection.style.opacity = "1";
+          photosSection.style.transform = "translateY(0)";
 
-    // Fungsi untuk update messages section saat ulang tahun
-    function updateMessagesForBirthday() {
+          // Animate each photo card
+          const photoCards = photosGrid.querySelectorAll(
+            ".birthday-photo-card"
+          );
+          photoCards.forEach((card) => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0) rotate(0deg)";
+          });
+        }, 100);
+      }
+
+      // Fungsi untuk update messages section saat ulang tahun
+      function updateMessagesForBirthday() {
         // Update style messages section
         if (messagesSection) {
-            messagesSection.style.cssText = `
+          messagesSection.style.cssText = `
                 max-width: 800px;
                 margin: 3rem auto;
                 padding: 3rem;
@@ -939,92 +1028,99 @@
                 transform: translateY(30px);
                 transition: all 1s ease 0.5s;
             `;
-            
-            // Sembunyikan tombol navigasi
-            if (messageControls) {
-                messageControls.style.display = 'none';
-            }
-            
-            // Animasi fade in
-            setTimeout(() => {
-                messagesSection.style.opacity = '1';
-                messagesSection.style.transform = 'translateY(0)';
-                
-                // Mulai sequence pesan ulang tahun
-                currentMessageIndex = 0;
-                startBirthdayMessageSequence();
-            }, 500);
-        }
-    }
 
-    // Fungsi untuk menampilkan sequence pesan ulang tahun
-    function startBirthdayMessageSequence() {
-        if (currentMessageIndex >= birthdayMessages.length) {
-            // Restart sequence
+          // Sembunyikan tombol navigasi
+          if (messageControls) {
+            messageControls.style.display = "none";
+          }
+
+          // Animasi fade in
+          setTimeout(() => {
+            messagesSection.style.opacity = "1";
+            messagesSection.style.transform = "translateY(0)";
+
+            // Mulai sequence pesan ulang tahun
             currentMessageIndex = 0;
-            setTimeout(() => {
-                startBirthdayMessageSequence();
-            }, 3000);
-            return;
+            startBirthdayMessageSequence();
+          }, 500);
         }
-        
+      }
+
+      // Fungsi untuk menampilkan sequence pesan ulang tahun
+      function startBirthdayMessageSequence() {
+        if (currentMessageIndex >= birthdayMessages.length) {
+          // Restart sequence
+          currentMessageIndex = 0;
+          setTimeout(() => {
+            startBirthdayMessageSequence();
+          }, 3000);
+          return;
+        }
+
         const message = birthdayMessages[currentMessageIndex];
         typeBirthdayMessage(message, () => {
-            // Setelah selesai diketik, tunggu lalu lanjut ke pesan berikutnya
-            setTimeout(() => {
-                currentMessageIndex++;
-                startBirthdayMessageSequence();
-            }, 2000);
+          // Setelah selesai diketik, tunggu lalu lanjut ke pesan berikutnya
+          setTimeout(() => {
+            currentMessageIndex++;
+            startBirthdayMessageSequence();
+          }, 2000);
         });
-    }
+      }
 
-    // Typing function khusus untuk pesan ulang tahun
-    function typeBirthdayMessage(text, callback) {
+      // Typing function khusus untuk pesan ulang tahun
+      function typeBirthdayMessage(text, callback) {
         // Stop typing sebelumnya jika ada
         if (typingTimeoutId) {
-            clearTimeout(typingTimeoutId);
-            typingTimeoutId = null;
+          clearTimeout(typingTimeoutId);
+          typingTimeoutId = null;
         }
-        
+
         isTyping = true;
         currentTypingIndex = 0;
-        typingText.innerHTML = '';
-        
+        typingText.innerHTML = "";
+
         // Update style untuk pesan ulang tahun
         typingText.style.cssText = `
-            font-size: ${currentMessageIndex === 0 ? '2.2rem' : '1.8rem'};
+            font-size: ${currentMessageIndex === 0 ? "2.2rem" : "1.8rem"};
             line-height: 1.6;
             text-align: center;
             margin-bottom: 2rem;
-            font-family: ${currentMessageIndex === 0 ? "'Dancing Script', cursive" : "'Playfair Display', serif"};
+            font-family: ${
+              currentMessageIndex === 0
+                ? "'Dancing Script', cursive"
+                : "'Playfair Display', serif"
+            };
             min-height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            color: ${currentMessageIndex === 0 ? 'var(--accent)' : '#2E3B30'};
-            font-weight: ${currentMessageIndex === 0 ? 'bold' : 'normal'};
+            color: ${currentMessageIndex === 0 ? "var(--accent)" : "#2E3B30"};
+            font-weight: ${currentMessageIndex === 0 ? "bold" : "normal"};
         `;
-        
-        function type() {
-            if (currentTypingIndex < text.length) {
-                typingText.innerHTML = text.substring(0, currentTypingIndex + 1);
-                currentTypingIndex++;
-                typingTimeoutId = setTimeout(type, currentMessageIndex === 0 ? 60 : 40);
-            } else {
-                typingText.innerHTML += '<span class="typing-cursor"></span>';
-                typingTimeoutId = null;
-                isTyping = false;
-                if (callback) callback();
-            }
-        }
-        
-        type();
-    }
 
-    // Fungsi untuk membuat efek konfeti
-    function createBirthdayConfetti() {
-        const confettiContainer = document.createElement('div');
+        function type() {
+          if (currentTypingIndex < text.length) {
+            typingText.innerHTML = text.substring(0, currentTypingIndex + 1);
+            currentTypingIndex++;
+            typingTimeoutId = setTimeout(
+              type,
+              currentMessageIndex === 0 ? 60 : 40
+            );
+          } else {
+            typingText.innerHTML += '<span class="typing-cursor"></span>';
+            typingTimeoutId = null;
+            isTyping = false;
+            if (callback) callback();
+          }
+        }
+
+        type();
+      }
+
+      // Fungsi untuk membuat efek konfeti
+      function createBirthdayConfetti() {
+        const confettiContainer = document.createElement("div");
         confettiContainer.style.cssText = `
             position: fixed;
             top: 0;
@@ -1035,32 +1131,54 @@
             z-index: 9998;
             overflow: hidden;
         `;
-        
-        const confettiColors = ['#FFB6C1', '#C8E6C9', '#B5EAD7', '#FFDAC1', '#D0D1FF', '#E2F0CB'];
-        const confettiShapes = ['🎉', '🎊', '🎂', '🥳', '🎁', '💝', '✨', '🌟', '💖', '🎈'];
-        
+
+        const confettiColors = [
+          "#FFB6C1",
+          "#C8E6C9",
+          "#B5EAD7",
+          "#FFDAC1",
+          "#D0D1FF",
+          "#E2F0CB",
+        ];
+        const confettiShapes = [
+          "🎉",
+          "🎊",
+          "🎂",
+          "🥳",
+          "🎁",
+          "💝",
+          "✨",
+          "🌟",
+          "💖",
+          "🎈",
+        ];
+
         for (let i = 0; i < 80; i++) {
-            const confetti = document.createElement('div');
-            confetti.style.cssText = `
+          const confetti = document.createElement("div");
+          confetti.style.cssText = `
                 position: absolute;
                 font-size: ${Math.random() * 20 + 15}px;
                 opacity: ${Math.random() * 0.7 + 0.3};
                 top: -50px;
                 left: ${Math.random() * 100}%;
-                animation: confettiFall ${Math.random() * 3 + 2}s linear ${Math.random() * 2}s infinite;
+                animation: confettiFall ${Math.random() * 3 + 2}s linear ${
+            Math.random() * 2
+          }s infinite;
             `;
-            confetti.innerHTML = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
-            confetti.style.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-            confettiContainer.appendChild(confetti);
+          confetti.innerHTML =
+            confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
+          confetti.style.color =
+            confettiColors[Math.floor(Math.random() * confettiColors.length)];
+          confettiContainer.appendChild(confetti);
         }
-        
+
         document.body.appendChild(confettiContainer);
-        
+
         // Tambahkan CSS untuk animasi konfeti jika belum ada
-        if (!document.querySelector('#confetti-animation')) {
-            const style = document.createElement('style');
-            style.id = 'confetti-animation';
-            style.textContent = `
+        if (!document.querySelector("#confetti-animation")) {
+          const style = document.createElement("style");
+          style.id = "confetti-animation";
+          style.textContent = `
                 @keyframes confettiFall {
                     0% {
                         transform: translateY(0) rotate(0deg);
@@ -1072,56 +1190,56 @@
                     }
                 }
             `;
-            document.head.appendChild(style);
+          document.head.appendChild(style);
         }
-    }
+      }
 
-    // ============================================
-    // FUNGSI UNTUK SEBELUM ULANG TAHUN
-    // ============================================
+      // ============================================
+      // FUNGSI UNTUK SEBELUM ULANG TAHUN
+      // ============================================
 
-    // Create Falling Photos untuk SEBELUL ulang tahun
-    function createFallingPhotos() {
+      // Create Falling Photos untuk SEBELUL ulang tahun
+      function createFallingPhotos() {
         // Hanya buat jika belum waktunya ulang tahun
         if (isBirthdayTime) return;
-        
+
         photosSection.innerHTML = "";
-        
+
         const usedPositions = new Set();
-        
+
         photosData.forEach((photo, index) => {
-            const photoElement = document.createElement("div");
-            photoElement.className = "falling-photo";
-            photoElement.id = `photo-${index}`;
-            
-            // Posisi acak
-            let startLeft, positionKey;
-            let attempts = 0;
-            const maxAttempts = 20;
-            
-            do {
-                startLeft = 5 + Math.random() * 80;
-                positionKey = Math.floor(startLeft / 20);
-                attempts++;
-                
-                if (attempts >= maxAttempts) {
-                    break;
-                }
-            } while (usedPositions.has(positionKey));
-            
-            usedPositions.add(positionKey);
-            
-            const startRotation = Math.random() * 30 - 15;
-            const animationDuration = 30 + Math.random() * 20;
-            const animationDelay = Math.random() * 15;
-            
-            photoElement.style.left = `${startLeft}%`;
-            photoElement.style.transform = `rotate(${startRotation}deg)`;
-            photoElement.style.setProperty("--start-rot", `${startRotation}deg`);
-            photoElement.style.animation = `fall ${animationDuration}s linear infinite`;
-            photoElement.style.animationDelay = `${animationDelay}s`;
-            
-            photoElement.innerHTML = `
+          const photoElement = document.createElement("div");
+          photoElement.className = "falling-photo";
+          photoElement.id = `photo-${index}`;
+
+          // Posisi acak
+          let startLeft, positionKey;
+          let attempts = 0;
+          const maxAttempts = 20;
+
+          do {
+            startLeft = 5 + Math.random() * 80;
+            positionKey = Math.floor(startLeft / 20);
+            attempts++;
+
+            if (attempts >= maxAttempts) {
+              break;
+            }
+          } while (usedPositions.has(positionKey));
+
+          usedPositions.add(positionKey);
+
+          const startRotation = Math.random() * 30 - 15;
+          const animationDuration = 30 + Math.random() * 20;
+          const animationDelay = Math.random() * 15;
+
+          photoElement.style.left = `${startLeft}%`;
+          photoElement.style.transform = `rotate(${startRotation}deg)`;
+          photoElement.style.setProperty("--start-rot", `${startRotation}deg`);
+          photoElement.style.animation = `fall ${animationDuration}s linear infinite`;
+          photoElement.style.animationDelay = `${animationDelay}s`;
+
+          photoElement.innerHTML = `
                 <div class="photo-front">
                     <div class="photo-frame" style="
                         width: 100%;
@@ -1149,7 +1267,11 @@
                                     object-fit: cover;
                                     transition: transform 0.5s ease;
                                  "
-                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\"width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, ${photo.color}40, #ffffff);color:#666;font-family:sans-serif;\"><i class=\"fas fa-heart\" style=\"font-size:3rem;color:${photo.color};\"></i></div>';"
+                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\"width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, ${
+                                   photo.color
+                                 }40, #ffffff);color:#666;font-family:sans-serif;\"><i class=\"fas fa-heart\" style=\"font-size:3rem;color:${
+            photo.color
+          };\"></i></div>';"
                             >
                         </div>
                         <div style="
@@ -1165,14 +1287,18 @@
                             white-space: nowrap;
                             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
                         ">
-                            <i class="${photo.icon}" style="margin-right: 5px;"></i>
+                            <i class="${
+                              photo.icon
+                            }" style="margin-right: 5px;"></i>
                             Kenangan ${index + 1}
                         </div>
                     </div>
                 </div>
                 <div class="photo-back">
                     <div style="
-                        background: linear-gradient(135deg, ${photo.color}20, #ffffff);
+                        background: linear-gradient(135deg, ${
+                          photo.color
+                        }20, #ffffff);
                         padding: 2rem;
                         border-radius: 10px;
                         height: 100%;
@@ -1193,7 +1319,9 @@
                             margin-bottom: 1.5rem;
                             box-shadow: 0 5px 15px ${photo.color}80;
                         ">
-                            <i class="${photo.icon}" style="font-size: 2.5rem; color: white;"></i>
+                            <i class="${
+                              photo.icon
+                            }" style="font-size: 2.5rem; color: white;"></i>
                         </div>
                         
                         <p class="memory-text" style="
@@ -1221,215 +1349,225 @@
                     </div>
                 </div>
             `;
-            
-            photoElement.addEventListener("click", () => {
-                const currentAnimation = photoElement.style.animation;
-                photoElement.dataset.originalAnimation = currentAnimation;
-                photoElement.style.animationPlayState = "paused";
-                
-                if (!flippedPhotos.has(index)) {
-                    photoElement.style.animation = "flip 0.8s forwards";
-                    flippedPhotos.add(index);
-                    
-                    const photoImg = photoElement.querySelector(".actual-photo");
-                    if (photoImg) {
-                        photoImg.style.transform = "scale(1.05)";
-                    }
-                } else {
-                    photoElement.style.animation = "flipBack 0.8s forwards";
-                    flippedPhotos.delete(index);
-                    
-                    const photoImg = photoElement.querySelector(".actual-photo");
-                    if (photoImg) {
-                        photoImg.style.transform = "scale(1)";
-                    }
-                    
-                    setTimeout(() => {
-                        photoElement.style.animation = photoElement.dataset.originalAnimation;
-                        photoElement.style.animationPlayState = "running";
-                    }, 800);
-                }
-                
-                if (!userInteracted) {
-                    userInteracted = true;
-                    bgMusic.play().catch((e) => console.log("Autoplay prevented:", e));
-                    isMusicPlaying = true;
-                    updateMusicButtons();
-                }
-            });
-            
-            photosSection.appendChild(photoElement);
-        });
-    }
 
-    // ============================================
-    // FIXED TYPING FUNCTION - UNTUK SEBELUM BIRTHDAY
-    // ============================================
-    function typeWriter(text, element, speed = 50) {
+          photoElement.addEventListener("click", () => {
+            const currentAnimation = photoElement.style.animation;
+            photoElement.dataset.originalAnimation = currentAnimation;
+            photoElement.style.animationPlayState = "paused";
+
+            if (!flippedPhotos.has(index)) {
+              photoElement.style.animation = "flip 0.8s forwards";
+              flippedPhotos.add(index);
+
+              const photoImg = photoElement.querySelector(".actual-photo");
+              if (photoImg) {
+                photoImg.style.transform = "scale(1.05)";
+              }
+            } else {
+              photoElement.style.animation = "flipBack 0.8s forwards";
+              flippedPhotos.delete(index);
+
+              const photoImg = photoElement.querySelector(".actual-photo");
+              if (photoImg) {
+                photoImg.style.transform = "scale(1)";
+              }
+
+              setTimeout(() => {
+                photoElement.style.animation =
+                  photoElement.dataset.originalAnimation;
+                photoElement.style.animationPlayState = "running";
+              }, 800);
+            }
+
+            if (!userInteracted) {
+              userInteracted = true;
+              bgMusic
+                .play()
+                .catch((e) => console.log("Autoplay prevented:", e));
+              isMusicPlaying = true;
+              updateMusicButtons();
+            }
+          });
+
+          photosSection.appendChild(photoElement);
+        });
+      }
+
+      // ============================================
+      // FIXED TYPING FUNCTION - UNTUK SEBELUM BIRTHDAY
+      // ============================================
+      function typeWriter(text, element, speed = 50) {
         if (typingTimeoutId) {
-            clearTimeout(typingTimeoutId);
-            typingTimeoutId = null;
+          clearTimeout(typingTimeoutId);
+          typingTimeoutId = null;
         }
-        
+
         isTyping = true;
         currentTypingIndex = 0;
-        element.innerHTML = '';
-        
-        function type() {
-            if (currentTypingIndex < text.length) {
-                element.innerHTML = text.substring(0, currentTypingIndex + 1);
-                currentTypingIndex++;
-                typingTimeoutId = setTimeout(type, speed);
-            } else {
-                element.innerHTML += '<span class="typing-cursor"></span>';
-                typingTimeoutId = null;
-                isTyping = false;
-            }
-        }
-        
-        type();
-    }
+        element.innerHTML = "";
 
-    function stopTyping() {
-        if (typingTimeoutId) {
-            clearTimeout(typingTimeoutId);
+        function type() {
+          if (currentTypingIndex < text.length) {
+            element.innerHTML = text.substring(0, currentTypingIndex + 1);
+            currentTypingIndex++;
+            typingTimeoutId = setTimeout(type, speed);
+          } else {
+            element.innerHTML += '<span class="typing-cursor"></span>';
             typingTimeoutId = null;
+            isTyping = false;
+          }
+        }
+
+        type();
+      }
+
+      function stopTyping() {
+        if (typingTimeoutId) {
+          clearTimeout(typingTimeoutId);
+          typingTimeoutId = null;
         }
         isTyping = false;
-    }
+      }
 
-    function updateMessage() {
+      function updateMessage() {
         // Hanya update jika belum birthday time
         if (isBirthdayTime) return;
-        
+
         stopTyping();
         setTimeout(() => {
-            typeWriter(messages[currentMessageIndex], typingText);
+          typeWriter(messages[currentMessageIndex], typingText);
         }, 10);
-    }
+      }
 
-    function nextMessage() {
+      function nextMessage() {
         // Hanya berfungsi jika belum birthday time
         if (isBirthdayTime) return;
-        
+
         if (isTyping) {
-            stopTyping();
-            typingText.innerHTML = messages[currentMessageIndex] + '<span class="typing-cursor"></span>';
+          stopTyping();
+          typingText.innerHTML =
+            messages[currentMessageIndex] +
+            '<span class="typing-cursor"></span>';
         }
-        
+
         currentMessageIndex = (currentMessageIndex + 1) % messages.length;
         setTimeout(() => {
-            typeWriter(messages[currentMessageIndex], typingText);
+          typeWriter(messages[currentMessageIndex], typingText);
         }, 100);
-    }
+      }
 
-    function prevMessage() {
+      function prevMessage() {
         // Hanya berfungsi jika belum birthday time
         if (isBirthdayTime) return;
-        
-        if (isTyping) {
-            stopTyping();
-            typingText.innerHTML = messages[currentMessageIndex] + '<span class="typing-cursor"></span>';
-        }
-        
-        currentMessageIndex = (currentMessageIndex - 1 + messages.length) % messages.length;
-        setTimeout(() => {
-            typeWriter(messages[currentMessageIndex], typingText);
-        }, 100);
-    }
 
-    // Music Control Functions
-    function playMusic() {
+        if (isTyping) {
+          stopTyping();
+          typingText.innerHTML =
+            messages[currentMessageIndex] +
+            '<span class="typing-cursor"></span>';
+        }
+
+        currentMessageIndex =
+          (currentMessageIndex - 1 + messages.length) % messages.length;
+        setTimeout(() => {
+          typeWriter(messages[currentMessageIndex], typingText);
+        }, 100);
+      }
+
+      // Music Control Functions
+      function playMusic() {
         bgMusic.play();
         isMusicPlaying = true;
         updateMusicButtons();
-    }
+      }
 
-    function pauseMusic() {
+      function pauseMusic() {
         bgMusic.pause();
         isMusicPlaying = false;
         updateMusicButtons();
-    }
+      }
 
-    function updateMusicButtons() {
+      function updateMusicButtons() {
         if (isMusicPlaying) {
-            playBtn.style.opacity = "0.5";
-            pauseBtn.style.opacity = "1";
+          playBtn.style.opacity = "0.5";
+          pauseBtn.style.opacity = "1";
         } else {
-            playBtn.style.opacity = "1";
-            pauseBtn.style.opacity = "0.5";
+          playBtn.style.opacity = "1";
+          pauseBtn.style.opacity = "0.5";
         }
-    }
+      }
 
-    // Initialize Everything
-    function init() {
+      // Initialize Everything
+      function init() {
         initBackgroundHearts();
         updateCountdown(); // Cek waktu pertama kali
-        
+
         // Cek apakah sudah waktunya ulang tahun
         const now = new Date();
         const timeDifference = BIRTHDAY_DATE.getTime() - now.getTime();
-        
+
         if (timeDifference <= 0) {
-            // Jika sudah lewat tanggal ulang tahun, langsung ke mode birthday
-            isBirthdayTime = true;
-            startBirthdayCelebration();
+          // Jika sudah lewat tanggal ulang tahun, langsung ke mode birthday
+          isBirthdayTime = true;
+          startBirthdayCelebration();
         } else {
-            // Jika belum, buat tampilan normal
-            createFallingPhotos();
-            updateMessage();
+          // Jika belum, buat tampilan normal
+          createFallingPhotos();
+          updateMessage();
         }
-        
+
         updateMusicButtons();
-        
+
         // Update countdown every second
         setInterval(updateCountdown, 1000);
 
         // Event Listeners
         prevBtn.addEventListener("click", prevMessage);
         nextBtn.addEventListener("click", nextMessage);
-        
+
         playBtn.addEventListener("click", () => {
-            if (!userInteracted) userInteracted = true;
-            playMusic();
+          if (!userInteracted) userInteracted = true;
+          playMusic();
         });
-        
+
         pauseBtn.addEventListener("click", pauseMusic);
-        
+
         bgMusic.volume = 0.3;
 
         // First interaction handler
         document.addEventListener("click", () => {
-            if (!userInteracted) {
-                userInteracted = true;
-                playMusic();
-            }
+          if (!userInteracted) {
+            userInteracted = true;
+            playMusic();
+          }
         });
 
         // Touch interaction for mobile
         document.addEventListener("touchstart", () => {
-            if (!userInteracted) {
-                userInteracted = true;
-                playMusic();
-            }
+          if (!userInteracted) {
+            userInteracted = true;
+            playMusic();
+          }
         });
 
         // Double-click untuk skip animasi typing (hanya sebelum birthday)
         typingText.addEventListener("dblclick", () => {
-            if (isTyping && !isBirthdayTime) {
-                stopTyping();
-                typingText.innerHTML = messages[currentMessageIndex] + '<span class="typing-cursor"></span>';
-            }
+          if (isTyping && !isBirthdayTime) {
+            stopTyping();
+            typingText.innerHTML =
+              messages[currentMessageIndex] +
+              '<span class="typing-cursor"></span>';
+          }
         });
 
         // Tambahkan tombol kontrol foto (hanya sebelum birthday)
         if (!isBirthdayTime) {
-            addPhotoControls();
+          addPhotoControls();
         }
-    }
-    
-    // Tambahkan tombol kontrol foto
-    function addPhotoControls() {
+      }
+
+      // Tambahkan tombol kontrol foto
+      function addPhotoControls() {
         const controlsDiv = document.createElement("div");
         controlsDiv.style.cssText = `
             position: fixed;
@@ -1459,19 +1597,44 @@
         `;
 
         refreshBtn.addEventListener("click", () => {
-            createFallingPhotos();
-            refreshBtn.innerHTML = '<i class="fas fa-check"></i> Diacak!';
-            setTimeout(() => {
-                refreshBtn.innerHTML = '<i class="fas fa-random"></i> Acak Posisi';
-            }, 1000);
+          createFallingPhotos();
+          refreshBtn.innerHTML = '<i class="fas fa-check"></i> Diacak!';
+          setTimeout(() => {
+            refreshBtn.innerHTML = '<i class="fas fa-random"></i> Acak Posisi';
+          }, 1000);
         });
 
         controlsDiv.appendChild(refreshBtn);
         document.body.appendChild(controlsDiv);
-    }
+      }
 
-    // Start the application
-    init();
-</script>
+      // Start the application
+      init();
+
+      // ============================================
+      // BIRTHDAY FLOATING LOVE EFFECT
+      // ============================================
+      function startFloatingLoveEffect() {
+        const container = document.createElement("div");
+        container.className = "birthday-effects";
+
+        const emojis = ["❤️", "💖", "💘", "🎉", "🎊", "✨", "🥳"];
+
+        for (let i = 0; i < 35; i++) {
+          const love = document.createElement("div");
+          love.className = "floating-love";
+          love.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+          love.style.left = Math.random() * 100 + "%";
+          love.style.fontSize = Math.random() * 20 + 18 + "px";
+          love.style.animationDuration = Math.random() * 3 + 4 + "s";
+          love.style.animationDelay = Math.random() * 3 + "s";
+
+          container.appendChild(love);
+        }
+
+        document.body.appendChild(container);
+      }
+    </script>
   </body>
 </html>
