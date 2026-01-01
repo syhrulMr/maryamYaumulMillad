@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Cinta Terindahku</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ===== VARIABLES & RESET ===== */
+      :root {
+        --white: #ffffff;
+        --sage: #c8e6c9;
+        --sage-light: #e8f5e9;
+        --sage-dark: #a5d6a7;
+        --accent: #ffb6c1;
+        --text: #2e3b30;
+        --shadow: rgba(0, 0, 0, 0.1);
+        --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          var(--white) 0%,
+          var(--sage-light) 100%
+        );
+        color: var(--text);
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* ===== BACKGROUND DECORATION ===== */
+      .bg-decoration {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .heart {
+        position: absolute;
+        color: var(--accent);
+        opacity: 0.1;
+        animation: float 15s infinite linear;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(-100vh) rotate(360deg);
+        }
+      }
+
+      /* ===== MAIN CONTAINER ===== */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ===== HEADER SECTION ===== */
+      .header {
+        text-align: center;
+        padding: 4rem 1rem 2rem;
+        position: relative;
+      }
+
+      .title {
+        font-family: "Dancing Script", cursive;
+        font-size: 4rem;
+        color: var(--text);
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px var(--shadow);
+        animation: fadeIn 2s ease;
+      }
+
+      .subtitle {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        color: var(--sage-dark);
+        font-style: italic;
+        margin-bottom: 3rem;
+        animation: fadeIn 2.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ===== COUNTDOWN SECTION ===== */
+      .countdown-section {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin: 3rem auto;
+        max-width: 800px;
+        box-shadow: 0 10px 30px var(--shadow);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        animation: fadeIn 3s ease;
+      }
+
+      .countdown-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--text);
+      }
+
+      .countdown-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+      }
+
+      .countdown-box {
+        background: var(--sage-light);
+        padding: 1.5rem;
+        border-radius: 15px;
+        min-width: 120px;
+        box-shadow: 0 5px 15px var(--shadow);
+        transition: var(--transition);
+      }
+
+      .countdown-box:hover {
+        transform: translateY(-5px);
+        background: var(--sage);
+      }
+
+      .countdown-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--text);
+        font-family: "Playfair Display", serif;
+      }
+
+      .countdown-label {
+        font-size: 1rem;
+        color: var(--sage-dark);
+        margin-top: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .birthday-message {
+        font-size: 1.8rem;
+        color: var(--accent);
+        font-family: "Dancing Script", cursive;
+        margin-top: 2rem;
+        padding: 1rem;
+        border-top: 1px dashed var(--sage-dark);
+        display: none;
+      }
+
+      /* ===== FALLING PHOTOS SECTION ===== */
+      .photos-section {
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+        margin: 4rem 0;
+      }
+
+      .falling-photo {
+        position: absolute;
+        width: 180px;
+        height: 220px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: var(--transition);
+        overflow: hidden;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+      }
+
+      .falling-photo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .photo-front,
+      .photo-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+
+      .photo-front {
+        background: white;
+        transform: rotateY(0deg);
+      }
+
+      .photo-back {
+        background: linear-gradient(135deg, var(--sage-light), var(--white));
+        transform: rotateY(180deg);
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .photo-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .memory-text {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        color: var(--text);
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+
+      .memory-icon {
+        font-size: 2rem;
+        color: var(--accent);
+        margin-top: 1rem;
+      }
+
+      /* ===== MESSAGES SECTION ===== */
+      .messages-section {
+        max-width: 800px;
+        margin: 6rem auto;
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px var(--shadow);
+      }
+
+      .typing-container {
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .typing-text {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-family: "Playfair Display", serif;
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .typing-cursor {
+        display: inline-block;
+        width: 3px;
+        height: 1.8rem;
+        background-color: var(--accent);
+        margin-left: 5px;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .message-controls {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .message-btn {
+        background: var(--sage);
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        color: var(--text);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .message-btn:hover {
+        background: var(--sage-dark);
+        transform: translateY(-3px);
+      }
+
+      /* ===== MUSIC PLAYER ===== */
+      .music-player {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 50px;
+        padding: 1rem;
+        box-shadow: 0 10px 30px var(--shadow);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .music-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--sage);
+        border: none;
+        color: var(--text);
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      .music-btn:hover {
+        background: var(--sage-dark);
+        transform: scale(1.1);
+      }
+
+      .music-info {
+        font-size: 0.9rem;
+        color: var(--text);
+        opacity: 0.8;
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        text-align: center;
+        padding: 3rem 1rem;
+        margin-top: 4rem;
+        color: var(--sage-dark);
+        font-size: 1rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .heart-sign {
+        color: var(--accent);
+        margin: 0 0.5rem;
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      /* ===== RESPONSIVE DESIGN ===== */
+      @media (max-width: 768px) {
+        .title {
+          font-size: 2.5rem;
+        }
+        .subtitle {
+          font-size: 1.2rem;
+        }
+        .countdown-container {
+          gap: 1rem;
+        }
+        .countdown-box {
+          min-width: 80px;
+          padding: 1rem;
+        }
+        .countdown-number {
+          font-size: 2rem;
+        }
+        .messages-section {
+          padding: 2rem;
+          margin: 3rem 1rem;
+        }
+        .typing-text {
+          font-size: 1.4rem;
+        }
+        .falling-photo {
+          width: 140px;
+          height: 180px;
+        }
+        .music-player {
+          bottom: 1rem;
+          right: 1rem;
+        }
+      }
+
+      /* ===== ANIMATIONS ===== */
+      @keyframes fall {
+        0% {
+          transform: translateY(-100px) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes flip {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(180deg);
+        }
+      }
+
+      @keyframes flipBack {
+        0% {
+          transform: rotateY(180deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Decoration -->
+    <div class="bg-decoration" id="bgHearts"></div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+      <button class="music-btn" id="playBtn">
+        <i class="fas fa-play"></i>
+      </button>
+      <button class="music-btn" id="pauseBtn">
+        <i class="fas fa-pause"></i>
+      </button>
+      <span class="music-info">Untukmu, Sayang</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="title">Selamat Ulang Tahun, ST. Maryam</h1>
+        <p class="subtitle">
+          Setiap momen bersamamu adalah hadiah terindah dalam hidupku
+        </p>
+      </header>
+
+      <!-- Countdown Section -->
+      <section class="countdown-section">
+        <h2 class="countdown-title">Menuju Ulang Tahunmu yang Indah</h2>
+        <div class="countdown-container">
+          <div class="countdown-box">
+            <div class="countdown-number" id="days">00</div>
+            <div class="countdown-label">Hari</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="hours">00</div>
+            <div class="countdown-label">Jam</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="minutes">00</div>
+            <div class="countdown-label">Menit</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-number" id="seconds">00</div>
+            <div class="countdown-label">Detik</div>
+          </div>
+        </div>
+        <div class="birthday-message" id="birthdayMessage">
+          Selamat Ulang Tahun, Cintaku! 🎉💖
+        </div>
+      </section>
+
+      <!-- Falling Photos Section -->
+      <section class="photos-section" id="photosSection">
+        <!-- Photos will be generated by JavaScript -->
+      </section>
+
+      <!-- Messages Section -->
+      <section class="messages-section">
+        <div class="typing-container">
+          <div class="typing-text" id="typingText"></div>
+          <div class="message-controls">
+            <button class="message-btn" id="prevBtn">
+              <i class="fas fa-chevron-left"></i> Sebelumnya
+            </button>
+            <button class="message-btn" id="nextBtn">
+              Selanjutnya <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Dibuat dengan <span class="heart-sign">❤️</span> penuh cinta untukmu
+        </p>
+        <p>Semoga setiap hari dalam hidupmu dipenuhi kebahagiaan dan cinta</p>
+      </footer>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+      <source
+        src="James Arthur - Say You Won't Let Go.mp3"
+        type="audio/mpeg"
+      />
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <script>
+    // ============================================
+    // EDIT DI SINI - TANGGAL ULANG TAHUN
+    // ============================================
+    const BIRTHDAY_DATE = new Date();
+    BIRTHDAY_DATE.setFullYear(2026, 0, 2); // Tahun, Bulan (0-11), Tanggal
+    BIRTHDAY_DATE.setHours(13, 12, 0, 0); // Jam, Menit, Detik, Milidetik
+    // ============================================
+
+    // Photo Data dengan foto kamu - PATH SUDAH BENAR
+    const photosData = [
+        {
+            text: "Kenangan pertama kita bersama, saat dunia terasa begitu sempurna",
+            icon: "fas fa-heart",
+            photoUrl: "img/DSC_0035.JPG",
+            color: "#FFB6C1",
+        },
+        {
+            text: "Kenangan pertama kita bersama, saat dunia terasa begitu sempurna",
+            icon: "fas fa-heart",
+            photoUrl: "img/Untitled.p1ng.png",
+            color: "#FFB6C1",
+        },
+        {
+            text: "Kenangan pertama kita bersama, saat dunia terasa begitu sempurna",
+            icon: "fas fa-heart",
+            photoUrl: "img/Untitled.png1.png",
+            color: "#FFB6C1",
+        },
+        {
+            text: "Setiap tawa bersamamu adalah melodi terindah dalam hidupku",
+            icon: "fas fa-smile",
+            photoUrl: "img/DSC_0732.JPG",
+            color: "#C8E6C9",
+        },
+        {
+            text: "Kamu membuat setiap hari terasa seperti petualangan baru",
+            icon: "fas fa-star",
+            photoUrl: "img/DSC_0746.JPG",
+            color: "#B5EAD7",
+        },
+        {
+            text: "Di mataku, kamu akan selalu menjadi yang terindah",
+            icon: "fas fa-gem",
+            photoUrl: "img/Gambar WhatsApp 2025-01-08 pukul 19.30.54_1c8f7a8a.jpg",
+            color: "#FFDAC1",
+        },
+        {
+            text: "Bersamamu, aku menemukan rumah sejati",
+            icon: "fas fa-home",
+            photoUrl: "img/IMG-20250509-WA0056.jpg",
+            color: "#D8E2DC",
+        },
+        {
+            text: "Cintamu adalah cahaya yang menerangi hari-hariku",
+            icon: "fas fa-sun",
+            photoUrl: "img/IMG-20250509-WA0059.jpg",
+            color: "#E2F0CB",
+        },
+        {
+            text: "Setiap detik bersamamu adalah anugerah terindah",
+            icon: "fas fa-heartbeat",
+            photoUrl: "img/IMG-20250509-WA0070.jpg",
+            color: "#D0D1FF",
+        },
+    ];
+
+    // Messages Data SEBELUM ulang tahun
+    const messages = [
+        "Sayangku, di ulang tahunmu ini, aku berdoa agar setiap harimu dipenuhi kebahagiaan, kesehatan, dan keberkahan. Kamu adalah hadiah terindah dari Tuhan untukku.",
+        "Tidak ada kata yang cukup untuk menggambarkan betapa bersyukurnya aku memilikimu. Kamu membuat hidupku lebih berarti dan penuh warna.",
+        "Semoga tahun ini membawa semua impian dan harapanmu menjadi kenyataan. Aku akan selalu ada di sisimu, mendukung setiap langkahmu.",
+        "Setiap kenangan bersamamu adalah harta karun yang aku simpan di hati. Terima kasih telah menjadi bagian terindah dari hidupku.",
+        "Di hari spesialmu ini, ingatlah bahwa kamu dicintai lebih dari yang bisa kamu bayangkan. Selamat ulang tahun, cintaku!",
+        "Mungkin aku tidak bisa memberimu dunia, tapi aku berjanji akan memberimu seluruh cintaku setiap hari dalam hidupku.",
+    ];
+
+    // Messages Data SETELAH ulang tahun
+    const birthdayMessages = [
+        "🎉🎂🎊 SELAMAT ULANG TAHUN SAYANGKU! 🎊🎂🎉",
+        "Hari ini adalah hari spesialmu, hari di mana dunia menjadi lebih indah karena kehadiranmu.",
+        "Semoga tahun ini membawa lebih banyak kebahagiaan, kesuksesan, dan cinta dalam hidupmu.",
+        "Aku bersyukur bisa merayakan hari spesial ini bersamamu, bahkan dari kejauhan.",
+        "Doaku selalu menyertaimu: sehat selalu, sukses dalam segala hal, dan selalu bahagia.",
+        "Terima kasih telah menjadi cahaya dalam hidupku. Aku mencintaimu lebih dari kata-kata bisa ungkapkan.",
+        "Mari kita buat lebih banyak kenangan indah di tahun yang baru ini! 🥳"
+    ];
+
+    // State Variables
+    let currentMessageIndex = 0;
+    let isMusicPlaying = false;
+    let userInteracted = false;
+    let flippedPhotos = new Set();
+    let isBirthdayTime = false; // VARIABLE BARU: status apakah sudah waktunya ulang tahun
+    
+    // VARIABEL UNTUK TYPING ANIMATION
+    let typingTimeoutId = null;
+    let currentTypingIndex = 0;
+    let isTyping = false;
+
+    // DOM Elements
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+    const birthdayMessage = document.getElementById("birthdayMessage");
+    const photosSection = document.getElementById("photosSection");
+    const typingText = document.getElementById("typingText");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const playBtn = document.getElementById("playBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const bgMusic = document.getElementById("bgMusic");
+    const bgHearts = document.getElementById("bgHearts");
+    const countdownTitle = document.querySelector('.countdown-title');
+    const countdownContainer = document.querySelector('.countdown-container');
+    const messageControls = document.querySelector('.message-controls');
+    const messagesSection = document.querySelector('.messages-section');
+
+    // Initialize Background Hearts
+    function initBackgroundHearts() {
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+            heart.style.animationDuration = `${Math.random() * 20 + 10}s`;
+            heart.style.animationDelay = `${Math.random() * 5}s`;
+            bgHearts.appendChild(heart);
+        }
+    }
+
+    // Countdown Function dengan transisi otomatis ke birthday mode
+    function updateCountdown() {
+        const now = new Date();
+        const timeDifference = BIRTHDAY_DATE.getTime() - now.getTime();
+        
+        // Cek jika sudah waktunya ulang tahun dan belum diaktifkan
+        if (timeDifference <= 0 && !isBirthdayTime) {
+            isBirthdayTime = true;
+            startBirthdayCelebration();
+            return;
+        }
+        
+        // Jika sudah birthday time, jangan update countdown lagi
+        if (isBirthdayTime) return;
+        
+        // Update countdown normal
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+        
+        daysElement.textContent = days.toString().padStart(2, "0");
+        hoursElement.textContent = hours.toString().padStart(2, "0");
+        minutesElement.textContent = minutes.toString().padStart(2, "0");
+        secondsElement.textContent = seconds.toString().padStart(2, "0");
+    }
+
+    // Fungsi untuk memulai perayaan ulang tahun (SEMUA MUNCUL BERSAMAAN)
+    function startBirthdayCelebration() {
+        console.log("🎉 ULANG TAHUN DIMULAI! 🎉");
+        
+        // 1. HENTIKAN SEMUA ANIMASI FOTO JATUH
+        const fallingPhotos = document.querySelectorAll('.falling-photo');
+        fallingPhotos.forEach(photo => {
+            photo.style.animation = 'none';
+        });
+        
+        // 2. UPDATE COUNTDOWN TITLE DAN TAMPILAN
+        countdownTitle.innerHTML = `
+            <span style="color: var(--accent); font-size: 2.2rem;">🎂 Waktunya Merayakan! 🎉</span>
+            <div style="font-size: 1.5rem; margin-top: 1rem; color: var(--sage-dark);">
+                Happy Birthday, ST. Maryam! 💖
+            </div>
+        `;
+        
+        // 3. SHOW BIRTHDAY MESSAGE dengan animasi
+        birthdayMessage.style.display = 'block';
+        birthdayMessage.style.opacity = '0';
+        birthdayMessage.style.transform = 'translateY(30px)';
+        birthdayMessage.style.transition = 'all 1s ease';
+        
+        setTimeout(() => {
+            birthdayMessage.innerHTML = `
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🎉🎂🎊</div>
+                <div style="font-size: 2.5rem; font-weight: bold; color: var(--accent);">
+                    SELAMAT ULANG TAHUN!
+                </div>
+                <div style="font-size: 1.8rem; margin-top: 1rem; color: var(--primary);">
+                    ST. Maryam 💖
+                </div>
+                <div style="margin-top: 2rem; font-size: 1.3rem; color: var(--sage-dark);">
+                    Hari ini adalah harimu yang spesial!
+                </div>
+            `;
+            
+            birthdayMessage.style.opacity = '1';
+            birthdayMessage.style.transform = 'translateY(0)';
+        }, 300);
+        
+        // 4. HIDE COUNTDOWN NUMBERS secara perlahan
+        countdownContainer.style.opacity = '0.5';
+        countdownContainer.style.transform = 'scale(0.95)';
+        countdownContainer.style.transition = 'all 0.8s ease';
+        
+        // 5. SHOW ALL PHOTOS BERSAMAAN dengan animasi spektakuler
+        setTimeout(() => {
+            showAllPhotosAtOnce();
+        }, 800);
+        
+        // 6. UPDATE MESSAGES SECTION untuk ulang tahun
+        setTimeout(() => {
+            updateMessagesForBirthday();
+        }, 1200);
+        
+        // 7. TAMBAH EFEK KONFETI
+        setTimeout(() => {
+            createBirthdayConfetti();
+        }, 1500);
+        
+        // 8. PLAY BIRTHDAY MUSIC (optional)
+        // bgMusic.src = "https://assets.codepen.io/242518/happy-birthday-song.mp3";
+        // bgMusic.play();
+    }
+
+    // Fungsi untuk menampilkan semua foto sekaligus dalam grid
+    function showAllPhotosAtOnce() {
+        // Clear photos section
+        photosSection.innerHTML = '';
+        photosSection.style.cssText = `
+            min-height: auto;
+            position: relative;
+            overflow: visible;
+            margin: 3rem 0;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        `;
+        
+        // Buat container grid untuk semua foto
+        const photosGrid = document.createElement('div');
+        photosGrid.style.cssText = `
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        `;
+        
+        // Buat card untuk setiap foto
+        photosData.forEach((photo, index) => {
+            const photoCard = document.createElement('div');
+            photoCard.className = 'birthday-photo-card';
+            photoCard.style.cssText = `
+                background: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+                transform: translateY(30px) rotate(${Math.random() * 10 - 5}deg);
+                opacity: 0;
+                transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.1}s;
+                cursor: pointer;
+            `;
+            
+            photoCard.innerHTML = `
+                <div style="
+                    width: 100%;
+                    height: 200px;
+                    overflow: hidden;
+                    position: relative;
+                ">
+                    <img src="${photo.photoUrl}" 
+                         alt="Kenangan ${index + 1}" 
+                         loading="lazy"
+                         style="
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: transform 0.5s ease;
+                         "
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\"width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, ${photo.color}40, #ffffff);color:#666;font-family:sans-serif;\"><i class=\"fas fa-heart\" style=\"font-size:3rem;color:${photo.color};\"></i></div>';"
+                    >
+                    <div style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.6));
+                    "></div>
+                    <div style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        padding: 1rem;
+                        color: white;
+                    ">
+                        <div style="display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                            <i class="${photo.icon}" style="color: ${photo.color};"></i>
+                            <span>Kenangan ${index + 1}</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="
+                    padding: 1.5rem;
+                    background: linear-gradient(135deg, ${photo.color}10, white);
+                ">
+                    <p style="
+                        font-size: 1rem;
+                        line-height: 1.5;
+                        color: #2E3B30;
+                        margin: 0;
+                        text-align: center;
+                    ">${photo.text}</p>
+                </div>
+            `;
+            
+            // Hover effect
+            photoCard.addEventListener('mouseenter', () => {
+                photoCard.style.transform = 'translateY(-10px) scale(1.05)';
+                photoCard.style.boxShadow = '0 25px 50px rgba(0,0,0,0.2)';
+                const img = photoCard.querySelector('img');
+                if (img) img.style.transform = 'scale(1.1)';
+            });
+            
+            photoCard.addEventListener('mouseleave', () => {
+                photoCard.style.transform = 'translateY(0) scale(1)';
+                photoCard.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+                const img = photoCard.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+            
+            photosGrid.appendChild(photoCard);
+        });
+        
+        photosSection.appendChild(photosGrid);
+        
+        // Trigger animation setelah DOM selesai
+        setTimeout(() => {
+            photosSection.style.opacity = '1';
+            photosSection.style.transform = 'translateY(0)';
+            
+            // Animate each photo card
+            const photoCards = photosGrid.querySelectorAll('.birthday-photo-card');
+            photoCards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) rotate(0deg)';
+            });
+        }, 100);
+    }
+
+    // Fungsi untuk update messages section saat ulang tahun
+    function updateMessagesForBirthday() {
+        // Update style messages section
+        if (messagesSection) {
+            messagesSection.style.cssText = `
+                max-width: 800px;
+                margin: 3rem auto;
+                padding: 3rem;
+                background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+                border-radius: 25px;
+                box-shadow: 0 20px 40px rgba(255,182,193,0.15);
+                border: 2px solid var(--accent);
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 1s ease 0.5s;
+            `;
+            
+            // Sembunyikan tombol navigasi
+            if (messageControls) {
+                messageControls.style.display = 'none';
+            }
+            
+            // Animasi fade in
+            setTimeout(() => {
+                messagesSection.style.opacity = '1';
+                messagesSection.style.transform = 'translateY(0)';
+                
+                // Mulai sequence pesan ulang tahun
+                currentMessageIndex = 0;
+                startBirthdayMessageSequence();
+            }, 500);
+        }
+    }
+
+    // Fungsi untuk menampilkan sequence pesan ulang tahun
+    function startBirthdayMessageSequence() {
+        if (currentMessageIndex >= birthdayMessages.length) {
+            // Restart sequence
+            currentMessageIndex = 0;
+            setTimeout(() => {
+                startBirthdayMessageSequence();
+            }, 3000);
+            return;
+        }
+        
+        const message = birthdayMessages[currentMessageIndex];
+        typeBirthdayMessage(message, () => {
+            // Setelah selesai diketik, tunggu lalu lanjut ke pesan berikutnya
+            setTimeout(() => {
+                currentMessageIndex++;
+                startBirthdayMessageSequence();
+            }, 2000);
+        });
+    }
+
+    // Typing function khusus untuk pesan ulang tahun
+    function typeBirthdayMessage(text, callback) {
+        // Stop typing sebelumnya jika ada
+        if (typingTimeoutId) {
+            clearTimeout(typingTimeoutId);
+            typingTimeoutId = null;
+        }
+        
+        isTyping = true;
+        currentTypingIndex = 0;
+        typingText.innerHTML = '';
+        
+        // Update style untuk pesan ulang tahun
+        typingText.style.cssText = `
+            font-size: ${currentMessageIndex === 0 ? '2.2rem' : '1.8rem'};
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: ${currentMessageIndex === 0 ? "'Dancing Script', cursive" : "'Playfair Display', serif"};
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            color: ${currentMessageIndex === 0 ? 'var(--accent)' : '#2E3B30'};
+            font-weight: ${currentMessageIndex === 0 ? 'bold' : 'normal'};
+        `;
+        
+        function type() {
+            if (currentTypingIndex < text.length) {
+                typingText.innerHTML = text.substring(0, currentTypingIndex + 1);
+                currentTypingIndex++;
+                typingTimeoutId = setTimeout(type, currentMessageIndex === 0 ? 60 : 40);
+            } else {
+                typingText.innerHTML += '<span class="typing-cursor"></span>';
+                typingTimeoutId = null;
+                isTyping = false;
+                if (callback) callback();
+            }
+        }
+        
+        type();
+    }
+
+    // Fungsi untuk membuat efek konfeti
+    function createBirthdayConfetti() {
+        const confettiContainer = document.createElement('div');
+        confettiContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            overflow: hidden;
+        `;
+        
+        const confettiColors = ['#FFB6C1', '#C8E6C9', '#B5EAD7', '#FFDAC1', '#D0D1FF', '#E2F0CB'];
+        const confettiShapes = ['🎉', '🎊', '🎂', '🥳', '🎁', '💝', '✨', '🌟', '💖', '🎈'];
+        
+        for (let i = 0; i < 80; i++) {
+            const confetti = document.createElement('div');
+            confetti.style.cssText = `
+                position: absolute;
+                font-size: ${Math.random() * 20 + 15}px;
+                opacity: ${Math.random() * 0.7 + 0.3};
+                top: -50px;
+                left: ${Math.random() * 100}%;
+                animation: confettiFall ${Math.random() * 3 + 2}s linear ${Math.random() * 2}s infinite;
+            `;
+            confetti.innerHTML = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
+            confetti.style.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            confettiContainer.appendChild(confetti);
+        }
+        
+        document.body.appendChild(confettiContainer);
+        
+        // Tambahkan CSS untuk animasi konfeti jika belum ada
+        if (!document.querySelector('#confetti-animation')) {
+            const style = document.createElement('style');
+            style.id = 'confetti-animation';
+            style.textContent = `
+                @keyframes confettiFall {
+                    0% {
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translateY(100vh) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+
+    // ============================================
+    // FUNGSI UNTUK SEBELUM ULANG TAHUN
+    // ============================================
+
+    // Create Falling Photos untuk SEBELUL ulang tahun
+    function createFallingPhotos() {
+        // Hanya buat jika belum waktunya ulang tahun
+        if (isBirthdayTime) return;
+        
+        photosSection.innerHTML = "";
+        
+        const usedPositions = new Set();
+        
+        photosData.forEach((photo, index) => {
+            const photoElement = document.createElement("div");
+            photoElement.className = "falling-photo";
+            photoElement.id = `photo-${index}`;
+            
+            // Posisi acak
+            let startLeft, positionKey;
+            let attempts = 0;
+            const maxAttempts = 20;
+            
+            do {
+                startLeft = 5 + Math.random() * 80;
+                positionKey = Math.floor(startLeft / 20);
+                attempts++;
+                
+                if (attempts >= maxAttempts) {
+                    break;
+                }
+            } while (usedPositions.has(positionKey));
+            
+            usedPositions.add(positionKey);
+            
+            const startRotation = Math.random() * 30 - 15;
+            const animationDuration = 30 + Math.random() * 20;
+            const animationDelay = Math.random() * 15;
+            
+            photoElement.style.left = `${startLeft}%`;
+            photoElement.style.transform = `rotate(${startRotation}deg)`;
+            photoElement.style.setProperty("--start-rot", `${startRotation}deg`);
+            photoElement.style.animation = `fall ${animationDuration}s linear infinite`;
+            photoElement.style.animationDelay = `${animationDelay}s`;
+            
+            photoElement.innerHTML = `
+                <div class="photo-front">
+                    <div class="photo-frame" style="
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        border: 12px solid ${photo.color};
+                        border-radius: 8px;
+                        padding: 8px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                        position: relative;
+                    ">
+                        <div class="photo-image-container" style="
+                            width: 100%;
+                            height: 100%;
+                            overflow: hidden;
+                            border-radius: 4px;
+                        ">
+                            <img src="${photo.photoUrl}" 
+                                 alt="Kenangan ${index + 1}" 
+                                 class="actual-photo"
+                                 loading="lazy"
+                                 style="
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    transition: transform 0.5s ease;
+                                 "
+                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\"width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, ${photo.color}40, #ffffff);color:#666;font-family:sans-serif;\"><i class=\"fas fa-heart\" style=\"font-size:3rem;color:${photo.color};\"></i></div>';"
+                            >
+                        </div>
+                        <div style="
+                            position: absolute;
+                            bottom: -20px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: ${photo.color};
+                            color: white;
+                            padding: 5px 15px;
+                            border-radius: 15px;
+                            font-size: 0.8rem;
+                            white-space: nowrap;
+                            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+                        ">
+                            <i class="${photo.icon}" style="margin-right: 5px;"></i>
+                            Kenangan ${index + 1}
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-back">
+                    <div style="
+                        background: linear-gradient(135deg, ${photo.color}20, #ffffff);
+                        padding: 2rem;
+                        border-radius: 10px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                    ">
+                        <div style="
+                            width: 80px;
+                            height: 80px;
+                            background: ${photo.color};
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 1.5rem;
+                            box-shadow: 0 5px 15px ${photo.color}80;
+                        ">
+                            <i class="${photo.icon}" style="font-size: 2.5rem; color: white;"></i>
+                        </div>
+                        
+                        <p class="memory-text" style="
+                            font-size: 1.1rem;
+                            line-height: 1.6;
+                            margin-bottom: 1.5rem;
+                            color: #2E3B30;
+                        ">${photo.text}</p>
+                        
+                        <div style="
+                            margin-top: auto;
+                            padding-top: 1rem;
+                            border-top: 2px dashed ${photo.color}50;
+                            width: 100%;
+                        ">
+                            <p style="
+                                font-size: 0.9rem; 
+                                color: #666;
+                                font-style: italic;
+                            ">
+                                <i class="fas fa-hand-point-left" style="margin-right: 5px;"></i>
+                                Klik untuk melihat foto
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            photoElement.addEventListener("click", () => {
+                const currentAnimation = photoElement.style.animation;
+                photoElement.dataset.originalAnimation = currentAnimation;
+                photoElement.style.animationPlayState = "paused";
+                
+                if (!flippedPhotos.has(index)) {
+                    photoElement.style.animation = "flip 0.8s forwards";
+                    flippedPhotos.add(index);
+                    
+                    const photoImg = photoElement.querySelector(".actual-photo");
+                    if (photoImg) {
+                        photoImg.style.transform = "scale(1.05)";
+                    }
+                } else {
+                    photoElement.style.animation = "flipBack 0.8s forwards";
+                    flippedPhotos.delete(index);
+                    
+                    const photoImg = photoElement.querySelector(".actual-photo");
+                    if (photoImg) {
+                        photoImg.style.transform = "scale(1)";
+                    }
+                    
+                    setTimeout(() => {
+                        photoElement.style.animation = photoElement.dataset.originalAnimation;
+                        photoElement.style.animationPlayState = "running";
+                    }, 800);
+                }
+                
+                if (!userInteracted) {
+                    userInteracted = true;
+                    bgMusic.play().catch((e) => console.log("Autoplay prevented:", e));
+                    isMusicPlaying = true;
+                    updateMusicButtons();
+                }
+            });
+            
+            photosSection.appendChild(photoElement);
+        });
+    }
+
+    // ============================================
+    // FIXED TYPING FUNCTION - UNTUK SEBELUM BIRTHDAY
+    // ============================================
+    function typeWriter(text, element, speed = 50) {
+        if (typingTimeoutId) {
+            clearTimeout(typingTimeoutId);
+            typingTimeoutId = null;
+        }
+        
+        isTyping = true;
+        currentTypingIndex = 0;
+        element.innerHTML = '';
+        
+        function type() {
+            if (currentTypingIndex < text.length) {
+                element.innerHTML = text.substring(0, currentTypingIndex + 1);
+                currentTypingIndex++;
+                typingTimeoutId = setTimeout(type, speed);
+            } else {
+                element.innerHTML += '<span class="typing-cursor"></span>';
+                typingTimeoutId = null;
+                isTyping = false;
+            }
+        }
+        
+        type();
+    }
+
+    function stopTyping() {
+        if (typingTimeoutId) {
+            clearTimeout(typingTimeoutId);
+            typingTimeoutId = null;
+        }
+        isTyping = false;
+    }
+
+    function updateMessage() {
+        // Hanya update jika belum birthday time
+        if (isBirthdayTime) return;
+        
+        stopTyping();
+        setTimeout(() => {
+            typeWriter(messages[currentMessageIndex], typingText);
+        }, 10);
+    }
+
+    function nextMessage() {
+        // Hanya berfungsi jika belum birthday time
+        if (isBirthdayTime) return;
+        
+        if (isTyping) {
+            stopTyping();
+            typingText.innerHTML = messages[currentMessageIndex] + '<span class="typing-cursor"></span>';
+        }
+        
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+        setTimeout(() => {
+            typeWriter(messages[currentMessageIndex], typingText);
+        }, 100);
+    }
+
+    function prevMessage() {
+        // Hanya berfungsi jika belum birthday time
+        if (isBirthdayTime) return;
+        
+        if (isTyping) {
+            stopTyping();
+            typingText.innerHTML = messages[currentMessageIndex] + '<span class="typing-cursor"></span>';
+        }
+        
+        currentMessageIndex = (currentMessageIndex - 1 + messages.length) % messages.length;
+        setTimeout(() => {
+            typeWriter(messages[currentMessageIndex], typingText);
+        }, 100);
+    }
+
+    // Music Control Functions
+    function playMusic() {
+        bgMusic.play();
+        isMusicPlaying = true;
+        updateMusicButtons();
+    }
+
+    function pauseMusic() {
+        bgMusic.pause();
+        isMusicPlaying = false;
+        updateMusicButtons();
+    }
+
+    function updateMusicButtons() {
+        if (isMusicPlaying) {
+            playBtn.style.opacity = "0.5";
+            pauseBtn.style.opacity = "1";
+        } else {
+            playBtn.style.opacity = "1";
+            pauseBtn.style.opacity = "0.5";
+        }
+    }
+
+    // Initialize Everything
+    function init() {
+        initBackgroundHearts();
+        updateCountdown(); // Cek waktu pertama kali
+        
+        // Cek apakah sudah waktunya ulang tahun
+        const now = new Date();
+        const timeDifference = BIRTHDAY_DATE.getTime() - now.getTime();
+        
+        if (timeDifference <= 0) {
+            // Jika sudah lewat tanggal ulang tahun, langsung ke mode birthday
+            isBirthdayTime = true;
+            startBirthdayCelebration();
+        } else {
+            // Jika belum, buat tampilan normal
+            createFallingPhotos();
+            updateMessage();
+        }
+        
+        updateMusicButtons();
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Event Listeners
+        prevBtn.addEventListener("click", prevMessage);
+        nextBtn.addEventListener("click", nextMessage);
+        
+        playBtn.addEventListener("click", () => {
+            if (!userInteracted) userInteracted = true;
+            playMusic();
+        });
+        
+        pauseBtn.addEventListener("click", pauseMusic);
+        
+        bgMusic.volume = 0.3;
+
+        // First interaction handler
+        document.addEventListener("click", () => {
+            if (!userInteracted) {
+                userInteracted = true;
+                playMusic();
+            }
+        });
+
+        // Touch interaction for mobile
+        document.addEventListener("touchstart", () => {
+            if (!userInteracted) {
+                userInteracted = true;
+                playMusic();
+            }
+        });
+
+        // Double-click untuk skip animasi typing (hanya sebelum birthday)
+        typingText.addEventListener("dblclick", () => {
+            if (isTyping && !isBirthdayTime) {
+                stopTyping();
+                typingText.innerHTML = messages[currentMessageIndex] + '<span class="typing-cursor"></span>';
+            }
+        });
+
+        // Tambahkan tombol kontrol foto (hanya sebelum birthday)
+        if (!isBirthdayTime) {
+            addPhotoControls();
+        }
+    }
+    
+    // Tambahkan tombol kontrol foto
+    function addPhotoControls() {
+        const controlsDiv = document.createElement("div");
+        controlsDiv.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        `;
+
+        const refreshBtn = document.createElement("button");
+        refreshBtn.innerHTML = '<i class="fas fa-random"></i> Acak Posisi';
+        refreshBtn.style.cssText = `
+            background: var(--sage);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        `;
+
+        refreshBtn.addEventListener("click", () => {
+            createFallingPhotos();
+            refreshBtn.innerHTML = '<i class="fas fa-check"></i> Diacak!';
+            setTimeout(() => {
+                refreshBtn.innerHTML = '<i class="fas fa-random"></i> Acak Posisi';
+            }, 1000);
+        });
+
+        controlsDiv.appendChild(refreshBtn);
+        document.body.appendChild(controlsDiv);
+    }
+
+    // Start the application
+    init();
+</script>
+  </body>
+</html>
